@@ -44,5 +44,5 @@ In client install MarvinJS:
 Download Platform independent (core archive)  
 https://chemaxon.com/products/marvin-js/download  
 (tested with version 22.6.0)  
-Unzip the archive in client/public/marvinjs  
-You need to have the file client/public/marvinjs/editor.html  
+Unzip the archive in ./client/public/marvinjs  
+You need to have the file ./client/public/marvinjs/editor.html  

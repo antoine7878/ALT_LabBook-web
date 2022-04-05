@@ -1,0 +1,33 @@
+@import 'board';
+@import 'chemEditor';
+@import 'compoundCard';
+@import 'expTable';
+@import 'expViewer';
+@import 'mainNavBar';
+@import 'globalList';
+@import 'pages';
+@import 'compoundViewer';
+@import 'groupCard';
+@import 'scrollArrowWrapper';
+
+.default-cursor {
+  cursor: default;
+}
+.pointer {
+  cursor: pointer;
+}
+
+.red {
+  color: red;
+}
+
+// Prevenent scroll on the
+html,
+body {
+  overflow: hidden;
+}
+
+.nav-item.nav-link.active {
+  border: 1px solid #dee2e6 !important;
+  border-radius: 3px !important;
+}

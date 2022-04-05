@@ -1,0 +1,20 @@
+.globalListjs {
+  width: 95%;
+  margin: auto;
+  overflow-y: scroll;
+  height: 90vh;
+  form {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+  }
+  //hode scroll bars
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /*firefox*/
+  scrollbar-width: none;
+  /*chrome*/
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,0 +1,9 @@
+# Prisma Migrate lockfile v1
+
+20201012145217-intial
+20201012215824-second
+20201016202852-change-to-float-coords
+20201021194407-added-index
+20201021194722-index-req
+20201027130524-unique-exp-name
+20220405205853-test

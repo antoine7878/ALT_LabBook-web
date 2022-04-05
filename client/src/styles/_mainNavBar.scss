@@ -1,0 +1,16 @@
+.mainNavBarjs {
+  margin-bottom: 10px;
+  &--navLink {
+    margin: 10px;
+    color: grey;
+    font-size: x-large;
+    &:hover {
+      color: white;
+    }
+  }
+  &--navBrand {
+    font-size: xxx-large;
+    position: absolute;
+    right: 0;
+  }
+}

@@ -1,0 +1,28 @@
+.compound-card {
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.card.compound-card {
+  max-width: 150px;
+}
+.compoundCard-compound-name {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 30px;
+}
+
+.compoundCard-cardBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+.mol-img {
+  margin: 5px;
+}

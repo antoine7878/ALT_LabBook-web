@@ -1,0 +1,53 @@
+.compoundViewerjs {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  &--button {
+    margin: 5px 5px 5px 0;
+  }
+  &--wrapper-main {
+    height: 100%;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 5px;
+  }
+  &--main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 85vh;
+    overflow: scroll;
+    //hode scroll bars
+    /* IE and Edge */
+    -ms-overflow-style: none;
+    /*firefox*/
+    scrollbar-width: none;
+    /*chrome*/
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &--exps {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    .list-group-item {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.bottom-scroll-arrow,
+.top-scroll-arrow {
+  position: absolute;
+  opacity: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+  animation: fadein-scroll-arrow 0.2s ease 0s 1 normal forwards;
+  &.removing {
+    animation: fadeout-scroll-arrow 0.2s ease 0s 1 normal forwards;
+  }
+}

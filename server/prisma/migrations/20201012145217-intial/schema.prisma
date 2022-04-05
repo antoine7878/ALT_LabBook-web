@@ -1,0 +1,74 @@
+datasource db {
+  provider = "sqlite"
+  url = "***"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  name     String
+  email    String  @unique
+  password String
+  groups   Group[]
+}
+
+model Group {
+  id         Int        @id @default(autoincrement())
+  createdAt  DateTime   @default(now())
+  ownerId    Int?
+  owner      User?      @relation(fields: [ownerId], references: [id])
+  name       String
+  img        String
+  struct     String
+  x          Int
+  y          Int
+  isArchived Boolean
+  Compound   Compound[]
+}
+
+model Compound {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  groupId   Int
+  group     Group    @relation(fields: [groupId], references: [id])
+  name      String
+  img       String
+  struct    String
+  Exp       Exp[]
+}
+
+model Exp {
+  id           Int            @id @default(autoincrement())
+  createdAt    DateTime       @default(now())
+  compoundId   Int
+  compound     Compound       @relation(fields: [compoundId], references: [id])
+  name         String
+  procedure    String
+  notes        String
+  reference    String
+  ExpTableLine ExpTableLine[]
+}
+
+model ExpTableLine {
+  id    Int    @id @default(autoincrement())
+  expId Int
+  exp   Exp    @relation(fields: [expId], references: [id])
+  role  Int
+  name  String
+  equiv Float
+  mol   Float
+  d     Float
+  conc  Float
+  mass  Float
+  vol   Float
+}
+
+//role :
+//0 SM
+//1 R
+//2 S
+//3 P
+//4 BP

@@ -1,0 +1,98 @@
+type Query {
+  groups(id: ID): [Group]!
+
+  compounds(groupId: ID): [Compound]!
+  compound(id: ID): Compound!
+  exp(id: ID): [Exp]!
+  exps(compoundId: ID): [Exp]!
+  expLength: Int!
+  expIdFromName(name: String): IdName
+}
+
+type Mutation {
+  #Group Mutations
+  addGroup(name: String): Group!
+  setNameGroup(id: ID!, name: String!): Group!
+  setImgStructGroup(id: ID!, img: String!, struct: String!): Group!
+  setCoordsGroup(id: ID!, x: Float!, y: Float!): Group!
+  toggleIsArchivedGroup(id: ID!): Group!
+  deleteGroup(id: ID!): Boolean!
+
+  #Compound Mutations
+  addCompound(groupId: ID): Compound!
+  setNameCompound(id: ID!, name: String!): Compound!
+  setImgStructCompound(id: ID!, img: String!, struct: String!): Compound!
+  moveCompound(movingCompoundId: ID!, destinationGroupId: ID!, destinationPosition: ID!): Boolean!
+
+  #Exp Mutations
+  addExp(compoundId: ID!): Exp!
+  setProcedureExp(id: ID!, procedure: String!): Exp!
+  setNotesExp(id: ID!, notes: String!): Exp!
+  setReferenceExp(id: ID!, reference: String!): Exp!
+}
+
+# type User {
+#   id: ID!
+#   name: String!
+#   email: String!
+#   password: String!
+#   expPrefix: String!
+#   ExpNumber: String!
+#   groups: [Group]
+# }
+
+type Group {
+  id: ID!
+  # ownerId: Int
+  # owner: User
+  name: String!
+  struct: String!
+  img: String!
+  x: Float!
+  y: Float!
+  isArchived: Boolean!
+  Compound: [Compound]!
+  compoundLength: Int!
+}
+
+type Compound {
+  id: ID!
+  groupId: Int!
+  group: Group!
+  name: String!
+  img: String!
+  struct: String!
+  index: Int!
+  Exp: [Exp]!
+}
+
+type Exp {
+  id: ID!
+  createdAt: String!
+  compoundId: Int!
+  compound: Compound!
+  name: String!
+  procedure: String
+  notes: String
+  reference: String
+  ExpTableLine: [ExpTableLine]!
+}
+
+type ExpTableLine {
+  id: ID!
+  expId: Int!
+  exp: Exp!
+  role: Int!
+  name: String!
+  equiv: Float!
+  mol: Float!
+  d: Float!
+  conc: Float!
+  mass: Float!
+  vol: Float!
+}
+
+type IdName {
+  name: String!
+  id: Int!
+}

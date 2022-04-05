@@ -1,0 +1,15 @@
+
+
+#scrollId-expList{
+    height: 88vh;
+    overflow: scroll;
+    //hode scroll bars
+    /* IE and Edge */
+    -ms-overflow-style: none;
+    /*firefox*/
+    scrollbar-width: none;
+    /*chrome*/
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }

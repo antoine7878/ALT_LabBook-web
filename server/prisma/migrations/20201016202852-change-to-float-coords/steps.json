@@ -1,0 +1,17 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "UpdateField",
+      "model": "Group",
+      "field": "x",
+      "type": "Float"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Group",
+      "field": "y",
+      "type": "Float"
+    }
+  ]
+}

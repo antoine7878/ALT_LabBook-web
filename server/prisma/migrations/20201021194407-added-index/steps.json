@@ -1,0 +1,12 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateField",
+      "model": "Compound",
+      "field": "index",
+      "type": "Int",
+      "arity": "Optional"
+    }
+  ]
+}

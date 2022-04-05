@@ -1,0 +1,24 @@
+.top-scroll-arrow {
+  top: 0;
+}
+.bottom-scroll-arrow {
+  bottom: 0;
+}
+
+@keyframes fadein-scroll-arrow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout-scroll-arrow {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
